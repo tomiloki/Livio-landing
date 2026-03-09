@@ -8,6 +8,7 @@ interface ButtonProps {
   type?: "button" | "submit";
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
+  className?: string;
 }
 
 export default function Button({ 
@@ -17,7 +18,8 @@ export default function Button({
   onClick,
   type = "button",
   size = "md",
-  disabled = false
+  disabled = false,
+  className: customClassName
 }: ButtonProps) {
   const baseStyles = "inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
   
@@ -33,7 +35,7 @@ export default function Button({
     tertiary: "bg-background-alt text-text-primary hover:bg-accent/10 hover:text-accent hover:shadow-md focus:ring-accent/50"
   };
 
-  const className = `${baseStyles} ${sizes[size]} ${variants[variant]}`;
+  const className = `${baseStyles} ${sizes[size]} ${variants[variant]} ${customClassName || ''}`;
 
   if (href) {
     return (

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Container from "@/components/layout/Container";
 
 export default function Problem() {
@@ -32,10 +32,24 @@ export default function Problem() {
     setIsDragging(false);
   };
 
-  const timelineItems = [
+  type Severity = 'warn' | 'bad' | 'chaos';
+
+  const timelineItems: Array<{
+    time: string;
+    severity: Severity;
+    label: string;
+    description: string;
+    chat?: {
+      sender: string;
+      message: string;
+      icon: string;
+    };
+    badge: string;
+    icon: React.ReactNode;
+  }> = [
     {
       time: "07:30",
-      severity: "warn",
+      severity: "warn" as const,
       label: "El día empieza en WhatsApp",
       description: "Tres grupos distintos, pedidos mezclados con fotos y audios. Hay que leer todo para entender qué llega hoy.",
       chat: {
@@ -52,7 +66,7 @@ export default function Problem() {
     },
     {
       time: "08:15",
-      severity: "warn",
+      severity: "warn" as const,
       label: "Planificación en Excel",
       description: "Copias los pedidos a mano, asignas vehículos, calculas rutas. 40 minutos después falta un pedido. Empiezas de nuevo.",
       badge: "40 min perdidos cada mañana",
@@ -66,7 +80,7 @@ export default function Problem() {
     },
     {
       time: "10:00",
-      severity: "bad",
+      severity: "bad" as const,
       label: "¿Dónde está el camión?",
       description: "Para saber qué pasa en terreno, hay que llamar. Si no contesta, a esperar.",
       chat: {
@@ -84,7 +98,7 @@ export default function Problem() {
     },
     {
       time: "12:30",
-      severity: "bad",
+      severity: "bad" as const,
       label: "Reclamo sin prueba",
       description: "El cliente dice que faltó una caja. El conductor jura que entregó todo. No hay foto, no hay firma, no hay prueba. Imposible resolver.",
       badge: "Sin evidencia para respaldarte",
@@ -97,7 +111,7 @@ export default function Problem() {
     },
     {
       time: "15:00",
-      severity: "bad",
+      severity: "bad" as const,
       label: "Cambio de último minuto",
       description: "Un cliente cancela, otro agrega parada. Hay que reorganizar dos rutas por teléfono, en tiempo real, de memoria.",
       badge: "Caos en cascada",
@@ -111,7 +125,7 @@ export default function Problem() {
     },
     {
       time: "18:30",
-      severity: "chaos",
+      severity: "chaos" as const,
       label: "Cierre de memoria",
       description: "¿Cuánto se entregó? ¿Qué quedó pendiente? Nadie sabe con certeza. Se junta en un Excel mañana... o no se junta.",
       badge: "El día termina sin control",
@@ -125,7 +139,7 @@ export default function Problem() {
     }
   ];
 
-  const severityClasses = {
+  const severityClasses: Record<Severity, { dot: string; badge: string }> = {
     warn: {
       dot: "bg-[rgba(251,191,36,0.12)] border-[rgba(251,191,36,0.45)] text-[#FCD34D]",
       badge: "border-[rgba(251,191,36,0.3)] text-[#FCD34D] bg-[rgba(251,191,36,0.08)]"
