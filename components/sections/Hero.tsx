@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 
@@ -62,7 +63,7 @@ export default function Hero() {
                 <polyline points="12 5 19 12 12 19"/>
               </svg>
             </Button>
-            <a 
+            <Link 
               href="/#como-funciona"
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border-[1.5px] border-white/25 rounded-lg px-7 py-3.5 text-[15px] font-medium transition-all hover:bg-white/16 hover:border-white/40"
             >
@@ -71,7 +72,7 @@ export default function Hero() {
                 <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
               </svg>
               Ver cómo funciona
-            </a>
+            </Link>
           </div>
 
           {/* Pilot offer strip */}

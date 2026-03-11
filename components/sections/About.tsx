@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import Container from "@/components/layout/Container";
 import { homeContent } from "@/content/home";
 
@@ -32,10 +33,11 @@ export default function About() {
               {/* Photo / Avatar zone */}
               <div className="aspect-[3/4] relative overflow-hidden bg-gradient-to-b from-gray-100 to-gray-200">
                 {member.photo ? (
-                  <img
+                  <Image
                     src={member.photo}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
