@@ -1,6 +1,6 @@
 export default function Problem() {
   return (
-    <section id="problema" className="bg-primary py-[88px] px-12 flex items-center justify-center">
+    <section id="problema" className="bg-primary py-16 md:py-[88px] px-5 md:px-12 flex items-center justify-center">
       <div className="max-w-[720px] w-full flex flex-col items-center text-center gap-6">
         {/* Eyebrow */}
         <span className="text-[10px] font-semibold tracking-[2.5px] uppercase text-white/[0.28]">
@@ -9,15 +9,13 @@ export default function Problem() {
 
         {/* Statement */}
         <h2 className="font-sans text-[clamp(22px,3vw,38px)] font-bold leading-[1.18] tracking-[-0.8px] text-white/[0.92]">
-          Si hoy operas con WhatsApp, Excel y memoria,<br />
-          no tienes sistema: <em className="not-italic text-white/[0.32] font-normal">tienes dependencia.</em>
+          El negocio funciona. Pero depende demasiado<br />
+          de que tú <em className="not-italic text-white/[0.32] font-normal">estés en todo.</em>
         </h2>
 
         {/* Subtext */}
         <p className="text-[clamp(15px,1.6vw,17px)] leading-[1.75] text-white/[0.42] max-w-[520px]">
-          Una persona que sabe todo. Pedidos que llegan por todos lados. Un cierre del día que nadie puede hacer si esa persona no está. No es mala suerte. Es falta de método.
-          <br />
-          <strong className="text-accent font-medium">LIVIO existe para el día en que decidiste que ya era suficiente.</strong>
+          Los pedidos llegan por WhatsApp. La asignación se hace de palabra. El cierre del día toma más tiempo del que debería. Y si falta alguien, todo se siente más frágil de lo que quisieras.
         </p>
 
         {/* CTA Button */}

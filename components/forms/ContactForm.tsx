@@ -140,7 +140,7 @@ export default function ContactForm() {
           className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-text-primary"
         >
           <option value="">Selecciona un rango</option>
-          <option value="2-5">2–5 vehículos</option>
+          <option value="1-5">1–5 vehículos</option>
           <option value="6-10">6–10 vehículos</option>
           <option value="11-15">11–15 vehículos</option>
           <option value="+15">+15 vehículos</option>

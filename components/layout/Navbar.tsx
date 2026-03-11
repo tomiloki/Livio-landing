@@ -24,15 +24,26 @@ export default function Navbar() {
           
           <div className="hidden md:flex items-center gap-8">
             {navigation.links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={link.href.startsWith("/#") ? undefined : pathname === link.href ? "page" : undefined}
-                className={`text-text-primary hover:text-accent transition-colors font-medium relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white ${!link.href.startsWith("/#") && pathname === link.href ? "text-accent" : ""}`}
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-              </Link>
+              link.href.startsWith('#') ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`text-text-primary hover:text-accent transition-colors font-medium relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white`}
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  className={`text-text-primary hover:text-accent transition-colors font-medium relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white ${pathname === link.href ? "text-accent" : ""}`}
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+                </Link>
+              )
             ))}
           </div>
 
@@ -71,14 +82,25 @@ export default function Navbar() {
         >
           <div className="flex flex-col gap-4 rounded-xl border border-border/50 bg-white/95 p-4 shadow-sm">
             {navigation.links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={link.href.startsWith("/#") ? undefined : pathname === link.href ? "page" : undefined}
-                className={`text-text-primary font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white ${!link.href.startsWith("/#") && pathname === link.href ? "text-accent" : ""}`}
-              >
-                {link.label}
-              </Link>
+              link.href.startsWith('#') ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-text-primary font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  className={`text-text-primary font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white ${pathname === link.href ? "text-accent" : ""}`}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Button href={navigation.cta.href} variant="primary" size="sm">
               {navigation.cta.label}

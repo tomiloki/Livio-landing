@@ -8,10 +8,10 @@ export default function About() {
   const { about } = homeContent;
 
   return (
-    <section id="nosotros" className="py-24 bg-white">
+    <section id="nosotros" className="py-16 md:py-24 bg-white">
       <Container>
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <p className="text-accent font-medium mb-3 tracking-[2.5px] uppercase text-[11px]">
             El equipo
           </p>
@@ -24,7 +24,7 @@ export default function About() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
           {about.team.map((member) => (
             <div
               key={member.name}

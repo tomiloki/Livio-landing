@@ -3,10 +3,11 @@ import Problem from "@/components/sections/Problem";
 import BeforeAfter from "@/components/ui/BeforeAfter";
 import HowItWorksTabs from "@/components/sections/HowItWorksTabs";
 import Scope from "@/components/sections/Scope";
-import VideoSection from "@/components/sections/VideoSection";
+// import VideoSection from "@/components/sections/VideoSection"; // TODO: reactivar cuando tengamos video
 import Differentiation from "@/components/sections/Differentiation";
 import About from "@/components/sections/About";
 import FinalCTA from "@/components/sections/FinalCTA";
+import LlmoText from "@/components/sections/LlmoText";
 
 export default function Home() {
   return (
@@ -16,10 +17,11 @@ export default function Home() {
       <HowItWorksTabs />
       <BeforeAfter />
       <Scope />
-      <VideoSection />
+      {/* <VideoSection /> TODO: reactivar cuando tengamos video */}
       <Differentiation />
       <About />
       <FinalCTA />
+      <LlmoText />
     </>
   );
 }

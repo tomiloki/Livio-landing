@@ -62,9 +62,9 @@ export default function Scope() {
   ];
 
   return (
-    <section className="py-20 bg-white border-t border-b border-border">
+    <section className="py-14 md:py-20 bg-white border-t border-b border-border">
       <Container>
-        <div className="grid md:grid-cols-2 gap-20 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-center max-w-6xl mx-auto">
           {/* Left - Title & Description */}
           <div>
             <p className="text-accent font-medium mb-3.5 tracking-[2.5px] uppercase text-[11px]">
@@ -80,16 +80,16 @@ export default function Scope() {
           </div>
 
           {/* Right - Feature Pills in Grid */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {features.map((feature) => (
               <div
                 key={feature.label}
-                className="flex items-center gap-2.5 px-4 py-3 rounded-full text-sm font-medium text-primary bg-accent-light border-[1.5px] border-transparent hover:border-accent hover:shadow-lg transition-all duration-150"
+                className="flex items-center gap-2.5 px-4 py-3 rounded-full text-sm font-medium text-primary bg-accent-light border-[1.5px] border-transparent hover:border-accent/30 hover:shadow-sm transition-all duration-200"
               >
                 <span className="w-3.5 h-3.5 text-accent flex-shrink-0">
                   {feature.icon}
                 </span>
-                <span className="whitespace-nowrap">{feature.label}</span>
+                <span>{feature.label}</span>
               </div>
             ))}
           </div>
@@ -97,7 +97,7 @@ export default function Scope() {
 
         {/* Pilot note */}
         <p className="text-center text-sm text-text-secondary mt-10 max-w-2xl mx-auto leading-relaxed">
-          Estamos en fase piloto. Las primeras empresas tienen implementación gratuita, 50% de descuento durante 12 meses y acceso directo al equipo. Los cupos son limitados.
+          Estamos en fase piloto. El piloto arranca en abril. Las empresas que reserven su cupo ahora aseguran la implementación gratuita y el descuento desde el día uno.
         </p>
       </Container>
     </section>

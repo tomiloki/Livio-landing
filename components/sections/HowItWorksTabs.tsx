@@ -116,7 +116,7 @@ export default function HowItWorksTabs() {
   };
 
   return (
-    <section id="como-funciona" className="py-24 bg-white">
+    <section id="como-funciona" className="py-16 md:py-24 bg-white">
       <Container>
         {/* Header */}
         <div className="text-center mb-14">
@@ -131,33 +131,34 @@ export default function HowItWorksTabs() {
           </p>
         </div>
 
-        {/* Tab Navigation - Slightly larger but not too much */}
-        <div className="bg-white border-2 border-border rounded-[16px] p-2 flex gap-1.5 mb-12 overflow-x-auto shadow-sm">
+        {/* Tab Navigation */}
+        <div className="bg-white border-2 border-border rounded-[16px] p-1.5 md:p-2 flex gap-1 md:gap-1.5 mb-8 md:mb-12 overflow-x-auto shadow-sm scrollbar-none">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 min-w-0 flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-[12px] text-[14px] font-semibold transition-all duration-200 whitespace-nowrap ${
+              className={`flex-shrink-0 md:flex-1 min-w-0 flex items-center justify-center gap-1.5 md:gap-2.5 px-3 md:px-4 py-3 md:py-3.5 rounded-[10px] md:rounded-[12px] text-[13px] md:text-[14px] font-semibold transition-all duration-200 whitespace-nowrap ${
                 activeTab === tab.id
                   ? 'bg-primary text-white shadow-lg'
                   : 'bg-transparent text-text-secondary hover:bg-background hover:text-text-primary'
               }`}
             >
-              <span className="w-[16px] h-[16px] flex-shrink-0">{tab.icon}</span>
-              <span className={`text-[11px] font-bold ${activeTab === tab.id ? 'opacity-70' : 'opacity-50'}`}>
+              <span className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] flex-shrink-0">{tab.icon}</span>
+              <span className={`text-[10px] md:text-[11px] font-bold hidden sm:inline ${activeTab === tab.id ? 'opacity-70' : 'opacity-50'}`}>
                 {tab.number}
               </span>
-              {tab.label}
+              <span className="hidden sm:inline">{tab.label}</span>
+              <span className="sm:hidden">{tab.number}</span>
             </button>
           ))}
         </div>
 
         {/* Tab Panels with Navigation */}
-        <div className="relative px-16 h-[400px] overflow-hidden">
-          {/* Previous Button - Inside container */}
+        <div className="relative px-0 md:px-16 min-h-[300px] md:min-h-[400px]">
+          {/* Previous Button */}
           <button
             onClick={prevTab}
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-border shadow-lg flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all hover:scale-110 z-10"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-border shadow-lg items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all hover:scale-110 z-10"
             aria-label="Paso anterior"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -165,10 +166,10 @@ export default function HowItWorksTabs() {
             </svg>
           </button>
 
-          {/* Next Button - Inside container */}
+          {/* Next Button */}
           <button
             onClick={nextTab}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-border shadow-lg flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all hover:scale-110 z-10"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-border shadow-lg items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all hover:scale-110 z-10"
             aria-label="Siguiente paso"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -179,24 +180,24 @@ export default function HowItWorksTabs() {
           {tabs.map((tab) => (
             <div
               key={tab.id}
-              className={`grid md:grid-cols-2 gap-16 items-start transition-all duration-300 ${
+              className={`grid md:grid-cols-2 gap-8 md:gap-16 items-start transition-all duration-300 ${
                 activeTab === tab.id ? 'block animate-fadePanel' : 'hidden'
               }`}
             >
               {/* Left: Content */}
               <div>
-                <div className="text-[76px] font-extrabold text-accent-light leading-none mb-3.5 tracking-[-3px]">
+                <div className="text-[56px] md:text-[76px] font-extrabold text-accent-light leading-none mb-2 md:mb-3.5 tracking-[-3px]">
                   {tab.number}
                 </div>
-                <h3 className="text-[31px] font-bold text-text-primary mb-4.5 leading-tight tracking-tight">
+                <h3 className="text-[24px] md:text-[31px] font-bold text-text-primary mb-3 md:mb-4.5 leading-tight tracking-tight">
                   {tab.title}
                 </h3>
-                <p className="text-[16.5px] text-text-secondary mb-7 leading-relaxed">
+                <p className="text-[15px] md:text-[16.5px] text-text-secondary mb-5 md:mb-7 leading-relaxed">
                   {tab.description}
                 </p>
-                <ul className="space-y-2.5">
+                <ul className="space-y-2 md:space-y-2.5">
                   {tab.bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-[14.5px] text-text-secondary">
+                    <li key={idx} className="flex items-start gap-2.5 text-[13px] md:text-[14.5px] text-text-secondary">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0"></span>
                       {bullet}
                     </li>
@@ -204,8 +205,8 @@ export default function HowItWorksTabs() {
                 </ul>
               </div>
 
-              {/* Right: Mockup */}
-              <div>
+              {/* Right: Mockup — hidden on mobile */}
+              <div className="hidden md:block">
                 {tab.id === 0 && <MockupRecibePedidos />}
                 {tab.id === 1 && <MockupPlanifica />}
                 {tab.id === 2 && <MockupEjecuta />}

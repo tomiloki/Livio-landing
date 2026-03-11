@@ -6,13 +6,13 @@ export default function FinalCTA() {
   const { finalCTA } = homeContent;
 
   return (
-    <section id="contacto" className="py-20 bg-gradient-to-br from-primary via-primary-light to-primary relative overflow-hidden">
+    <section id="contacto" className="py-14 md:py-20 bg-gradient-to-br from-primary via-primary-light to-primary relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       
       <Container>
-        <div className="grid md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start max-w-5xl mx-auto relative z-10">
           <div className="text-white">
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold mb-6">
               Solicitar cupo en el piloto
@@ -58,7 +58,7 @@ export default function FinalCTA() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-2xl p-8">
+          <div className="bg-white rounded-2xl shadow-2xl p-5 md:p-8">
             <ContactForm />
           </div>
         </div>

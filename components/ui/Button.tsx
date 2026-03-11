@@ -38,6 +38,13 @@ export default function Button({
   const className = `${baseStyles} ${sizes[size]} ${variants[variant]} ${customClassName || ''}`;
 
   if (href) {
+    if (href.startsWith('#')) {
+      return (
+        <a href={href} className={className}>
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={className}>
         {children}

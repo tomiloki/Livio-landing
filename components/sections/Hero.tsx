@@ -1,10 +1,9 @@
-import Link from "next/link";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center justify-center text-center overflow-hidden pt-36 pb-24 px-12">
+    <section className="relative min-h-[92vh] flex items-center justify-center text-center overflow-hidden pt-28 pb-20 px-5 md:pt-36 md:pb-24 md:px-12">
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -35,13 +34,13 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-7">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
             <span className="text-xs font-medium text-white/80">
-              Piloto abierto — cupos limitados
+              Lanzamiento en abril — reserva tu cupo
             </span>
           </div>
 
           {/* Título */}
-          <h1 className="text-[clamp(38px,6vw,68px)] font-extrabold leading-[1.07] tracking-[-2px] text-white mb-6">
-            La operación logística<br />
+          <h1 className="text-[clamp(32px,6vw,68px)] font-extrabold leading-[1.07] tracking-[-2px] text-white mb-6">
+            La operación logística<span className="md:block inline"> </span>
             de tu pyme, <span className="text-accent">en orden.</span>
           </h1>
 
@@ -51,9 +50,9 @@ export default function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex items-center justify-center gap-3 flex-wrap mb-14">
+          <div className="flex items-center justify-center gap-3 flex-wrap mb-10 md:mb-14">
             <Button 
-              href="/#contacto" 
+              href="#contacto" 
               variant="primary"
               className="shadow-[0_4px_24px_rgba(47,143,131,0.45)] hover:shadow-[0_6px_28px_rgba(47,143,131,0.50)] hover:-translate-y-0.5 transition-all"
             >
@@ -63,8 +62,8 @@ export default function Hero() {
                 <polyline points="12 5 19 12 12 19"/>
               </svg>
             </Button>
-            <Link 
-              href="/#como-funciona"
+            <a 
+              href="#como-funciona"
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border-[1.5px] border-white/25 rounded-lg px-7 py-3.5 text-[15px] font-medium transition-all hover:bg-white/16 hover:border-white/40"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -72,14 +71,14 @@ export default function Hero() {
                 <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
               </svg>
               Ver cómo funciona
-            </Link>
+            </a>
           </div>
 
           {/* Pilot offer strip */}
-          <div className="flex items-center justify-center gap-6 flex-wrap">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 flex-wrap">
             <div className="flex items-center gap-1.5 text-[13px] text-white/60 font-medium">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-              Piloto abierto — cupos limitados
+              Lanzamiento en abril — reserva tu cupo
             </div>
             <div className="w-px h-3 bg-white/15"></div>
             <div className="flex items-center gap-1.5 text-[13px] text-white/50">
@@ -88,7 +87,7 @@ export default function Hero() {
               </svg>
               Implementación gratuita
             </div>
-            <div className="w-px h-3 bg-white/15"></div>
+            <div className="hidden sm:block w-px h-3 bg-white/15"></div>
             <div className="flex items-center gap-1.5 text-[13px] text-white/50">
               <svg className="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12"/>

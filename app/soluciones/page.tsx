@@ -95,7 +95,7 @@ export default function SolucionesPage() {
               ¿Tu operación calza con LIVIO?
             </h2>
             <p className="text-lg text-text-secondary mb-8">
-              Si tienes entre 2 y 15 vehículos y hoy operas con WhatsApp y Excel, esto es para ti.
+              Si tienes entre 1 y 15 vehículos y hoy operas con WhatsApp y Excel, esto es para ti.
             </p>
             <Button href="/#contacto" variant="primary">
               Quiero ser empresa piloto

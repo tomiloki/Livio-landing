@@ -8,7 +8,7 @@ export const homeContent = {
       secondary: { label: "Ver cómo funciona", href: "/#como-funciona" },
     },
     badges: [
-      "🟢 Piloto abierto — cupos limitados",
+      "🟢 Lanzamiento en abril — últimos cupos disponibles",
       "Implementación gratuita",
       "50% de descuento durante 12 meses",
     ],
@@ -137,7 +137,7 @@ export const homeContent = {
     team: [
       {
         name: "Tomás Fuentealba",
-        role: "CEO y Fundador",
+        role: "Co-Founder / CEO",
         bio: "Trabajó en el rubro logístico en terreno — repartiendo agua, coordinando flotas, viendo de cerca cómo el desorden operativo frena el crecimiento de pymes con potencial real. Livio nació de esa experiencia directa.",
         initials: "TF",
         isFounder: true,
@@ -145,7 +145,7 @@ export const homeContent = {
       },
       {
         name: "Tomás Escalante",
-        role: "Co-Founder / Product Manager",
+        role: "Co-Founder / Project Manager",
         bio: "Estuvo en todas las reuniones y visitas a clientes desde el primer día. Estudiante de ingeniería informática, con foco en que el producto sea simple de usar desde el minuto uno.",
         initials: "TE",
         isFounder: true,
@@ -171,8 +171,8 @@ export const homeContent = {
   },
 
   finalCTA: {
-    title: "Sé parte del piloto.",
-    subtitle: "Estamos abriendo cupos para las primeras empresas que quieran ordenar su operación con LIVIO. Si tienes entre 2 y 15 vehículos y hoy operas con WhatsApp y Excel, esto es para ti.",
+    title: "El piloto arranca en abril. Reserva tu cupo ahora.",
+    subtitle: "Estamos cerrando los últimos cupos antes del lanzamiento. Si tienes entre 1 y 15 vehículos y hoy operas con WhatsApp y Excel, este es el momento.",
     benefits: [
       "Implementación gratuita",
       "50% de descuento durante 12 meses",
