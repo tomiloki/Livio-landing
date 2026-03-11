@@ -1,12 +1,12 @@
 export const navigation = {
   links: [
+    { label: "El problema", href: "/#problema" },
     { label: "Cómo funciona", href: "/#como-funciona" },
-    { label: "Soluciones", href: "/#soluciones" },
     { label: "Nosotros", href: "/#nosotros" },
     { label: "Contacto", href: "/#contacto" },
   ],
   cta: {
-    label: "Agendar demo",
+    label: "Unirme al piloto",
     href: "/#contacto",
   },
 };

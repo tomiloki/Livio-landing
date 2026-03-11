@@ -17,13 +17,13 @@ export default function HowItWorksTabs() {
       ),
       number: "01",
       label: "Recibe pedidos",
-      title: "Recibe todos los pedidos en un solo lugar",
-      description: "Sin importar de dónde vienen — WhatsApp, llamada, formulario — todos los pedidos del día quedan centralizados. Nada se pierde, nada queda en la memoria de nadie.",
+      title: "Todos los pedidos en un solo lugar",
+      description: "Sin importar de dónde vienen — WhatsApp, llamada, formulario — todos los pedidos del día quedan centralizados desde el primer momento. Nada se pierde. Nada queda en la memoria de nadie.",
       bullets: [
-        "Pedidos ingresados desde múltiples canales",
+        "Pedidos ingresados desde cualquier canal",
         "Estado visible desde el primer momento",
         "Sin duplicados ni pedidos perdidos",
-        "Historial de cada pedido desde el ingreso"
+        "Historial completo desde el ingreso"
       ]
     },
     {
@@ -38,8 +38,8 @@ export default function HowItWorksTabs() {
       ),
       number: "02",
       label: "Planifica",
-      title: "Planifica y asigna con claridad",
-      description: "Asigna pedidos a vehículos y conductores de forma clara y ordenada. Cada conductor sabe exactamente qué lleva, a dónde va y en qué orden.",
+      title: "Asigna con claridad, no con llamadas",
+      description: "Ves todo lo que hay que entregar en el día y lo asignas a cada chofer en segundos. Sin Excel, sin coordinación por teléfono, sin confusiones de último minuto.",
       bullets: [
         "Asignación por vehículo y conductor",
         "Organización por zona o sector",
@@ -56,8 +56,8 @@ export default function HowItWorksTabs() {
       ),
       number: "03",
       label: "Ejecuta",
-      title: "Ejecuta con visibilidad en tiempo real",
-      description: "Los conductores ven su ruta del día y ejecutan. Tú ves desde el panel qué está pasando en terreno sin tener que llamar a nadie.",
+      title: "El chofer sabe exactamente qué hacer",
+      description: "La app guía al chofer paso a paso: qué entregar, en qué orden, cómo registrarlo. No depende de instrucciones por WhatsApp ni de memoria.",
       bullets: [
         "Seguimiento de vehículos en tiempo real",
         "Estado de cada entrega visible al instante",
@@ -75,8 +75,8 @@ export default function HowItWorksTabs() {
       ),
       number: "04",
       label: "Registra evidencia",
-      title: "Cada entrega queda respaldada",
-      description: "Foto, firma digital y ubicación GPS por cada entrega. Si un cliente reclama, tienes el respaldo completo. Sin papeles perdidos, sin WhatsApps que desaparecen.",
+      title: "Cada entrega queda documentada",
+      description: "Foto, firma y estado registrado desde la app. Si algo falla, también queda registrado. Trazabilidad real, no suposiciones.",
       bullets: [
         "Foto de entrega desde la app del conductor",
         "Firma digital del receptor",
@@ -96,8 +96,8 @@ export default function HowItWorksTabs() {
       ),
       number: "05",
       label: "Cierra el día",
-      title: "Cierra el día con control total",
-      description: "Al final del día, tienes un reporte completo de lo entregado, lo pendiente y lo que necesita seguimiento. Sin llamadas de cierre, sin planillas manuales.",
+      title: "Cierre del día en minutos, no en horas",
+      description: "Al terminar, tienes el resumen completo: qué se entregó, qué no, qué se cobró y qué quedó pendiente. El día cierra con datos, no con llamadas.",
       bullets: [
         "Resumen automático de entregas del día",
         "Pendientes con detalle de cada caso",
@@ -153,7 +153,7 @@ export default function HowItWorksTabs() {
         </div>
 
         {/* Tab Panels with Navigation */}
-        <div className="relative px-16">
+        <div className="relative px-16 h-[400px] overflow-hidden">
           {/* Previous Button - Inside container */}
           <button
             onClick={prevTab}
@@ -179,7 +179,7 @@ export default function HowItWorksTabs() {
           {tabs.map((tab) => (
             <div
               key={tab.id}
-              className={`grid md:grid-cols-2 gap-16 items-center transition-all duration-300 ${
+              className={`grid md:grid-cols-2 gap-16 items-start transition-all duration-300 ${
                 activeTab === tab.id ? 'block animate-fadePanel' : 'hidden'
               }`}
             >
@@ -217,7 +217,7 @@ export default function HowItWorksTabs() {
         </div>
 
         {/* Dot Indicators */}
-        <div className="flex items-center justify-center gap-2.5 mt-12">
+        <div className="flex items-center justify-center gap-2.5 mt-12 h-12">
           {tabs.map((tab) => (
             <button
               key={tab.id}

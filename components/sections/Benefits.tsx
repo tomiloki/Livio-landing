@@ -1,10 +1,18 @@
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
-import { homeContent } from "@/content/home";
 
 export default function Benefits() {
-  const { benefits } = homeContent;
+  const benefits = {
+    title: "Menos dependencia. Más control.",
+    subtitle: "LIVIO convierte el caos operativo en rutina ordenada",
+    benefits: [
+      { title: "Operación delegable", description: "Deja de depender de una sola persona. Cualquiera puede ver qué hay que hacer." },
+      { title: "Visibilidad real", description: "Sabes dónde está cada vehículo y qué está pasando en terreno." },
+      { title: "Evidencia auditable", description: "Cada entrega queda respaldada. Sin papeles perdidos ni fotos sueltas." },
+      { title: "Cierre diario claro", description: "Al final del día, cierras con certeza. Sin dudas ni pendientes ocultos." },
+    ],
+  };
 
   const icons = [
     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" key="1">

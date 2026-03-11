@@ -1,10 +1,19 @@
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
-import { homeContent } from "@/content/home";
 
 export default function UseCases() {
-  const { useCases } = homeContent;
+  const useCases = {
+    title: "Para distintos tipos de operación logística",
+    subtitle: "LIVIO se adapta a pymes con flota propia y entregas diarias",
+    cases: [
+      { title: "Agua embotellada", problem: "Pedidos por WhatsApp, rutas manuales, sin evidencia clara", solution: "Centraliza pedidos, asigna rutas y cierra con evidencia digital" },
+      { title: "Gas a domicilio", problem: "Dependencia del despachador, sin visibilidad en terreno", solution: "Operación delegable con seguimiento en tiempo real" },
+      { title: "Mayoristas con despacho", problem: "Planificación caótica, cierre manual y lento", solution: "Planificación ordenada y cierre diario automático" },
+      { title: "Horeca y distribución", problem: "Múltiples paradas, evidencia perdida, reclamos sin respaldo", solution: "Evidencia auditable por entrega y trazabilidad completa" },
+    ],
+    footer: "¿Tu operación tiene flota propia y entregas diarias? LIVIO es para ti.",
+  };
 
   const icons = [
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" key="1">

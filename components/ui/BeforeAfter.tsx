@@ -1,6 +1,9 @@
 import Container from "@/components/layout/Container";
+import { homeContent } from "@/content/home";
 
 export default function BeforeAfter() {
+  const { beforeAfter } = homeContent;
+
   return (
     <section className="py-12 bg-white">
       <Container>
@@ -16,26 +19,12 @@ export default function BeforeAfter() {
               <h3 className="text-xl font-bold text-text-primary">Sin LIVIO</h3>
             </div>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-red-500 mt-1">•</span>
-                <span>Pedidos por WhatsApp y llamadas</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-red-500 mt-1">•</span>
-                <span>Planificación en Excel o de memoria</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-red-500 mt-1">•</span>
-                <span>No sabes dónde está cada vehículo</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-red-500 mt-1">•</span>
-                <span>Evidencia en fotos sueltas de WhatsApp</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-red-500 mt-1">•</span>
-                <span>Al cierre del día: nadie sabe qué pasó</span>
-              </li>
+              {beforeAfter.without.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-text-secondary">
+                  <span className="text-red-500 mt-1">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -50,26 +39,12 @@ export default function BeforeAfter() {
               <h3 className="text-xl font-bold text-text-primary">Con LIVIO</h3>
             </div>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-accent mt-1">✓</span>
-                <span>Todos los pedidos en un solo lugar</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-accent mt-1">✓</span>
-                <span>Asignación clara por vehículo y conductor</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-accent mt-1">✓</span>
-                <span>Seguimiento en tiempo real</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-accent mt-1">✓</span>
-                <span>Evidencia con foto, firma y ubicación</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-secondary">
-                <span className="text-accent mt-1">✓</span>
-                <span>Reporte completo al cerrar el día</span>
-              </li>
+              {beforeAfter.with.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-text-secondary">
+                  <span className="text-accent mt-1">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

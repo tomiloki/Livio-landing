@@ -96,6 +96,21 @@
     to { stroke-dashoffset: -20; }
   }
 
+  @keyframes shake-x {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-3px); }
+    60% { transform: translateX(3px); }
+  }
+
+  @keyframes float-r {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-4px) rotate(3deg); }
+  }
+
+  @keyframes dash-run {
+    to { stroke-dashoffset: -24; }
+  }
+
   .animate-fade-in-up {
     animation: fade-in-up 0.6s ease-out forwards;
   }

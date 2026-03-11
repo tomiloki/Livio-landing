@@ -13,8 +13,8 @@ export default function Home() {
     <>
       <Hero />
       <Problem />
-      <BeforeAfter />
       <HowItWorksTabs />
+      <BeforeAfter />
       <Scope />
       <VideoSection />
       <Differentiation />

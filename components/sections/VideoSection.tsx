@@ -11,7 +11,7 @@ export default function VideoSection() {
               Ve LIVIO en acción
             </p>
             <h2 className="text-[clamp(22px,2.8vw,30px)] font-bold text-text-primary leading-tight tracking-tight">
-              Un recorrido por la operación diaria
+              Mira cómo funciona en 2 minutos
             </h2>
           </div>
 
@@ -54,7 +54,7 @@ export default function VideoSection() {
 
           {/* Context text */}
           <p className="mt-4 text-center text-[13px] text-text-secondary leading-relaxed">
-            Desde el primer pedido del día hasta el cierre con evidencia — todo en menos de dos minutos.
+            Desde el primer pedido del día hasta el cierre con evidencia. Todo el flujo, en menos de dos minutos.
           </p>
         </div>
       </Container>

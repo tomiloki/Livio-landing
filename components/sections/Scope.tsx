@@ -71,11 +71,11 @@ export default function Scope() {
               Lo que incluye v1
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-text-primary leading-tight tracking-tight mb-5">
-              Lo esencial para operar.<br />
-              <span className="text-accent">Sin humo.</span>
+              Lo esencial para ordenar<br />
+              la operación. <span className="text-accent">Sin humo.</span>
             </h2>
             <p className="text-[15px] text-text-secondary leading-relaxed max-w-md">
-              Esto es lo que está disponible hoy. <strong className="text-text-primary font-medium">Funciona.</strong> Lo que viene después lo construimos junto a las operaciones que adopten LIVIO.
+              Esto es lo que está disponible hoy. <strong className="text-text-primary font-medium">Funciona desde el primer día.</strong> Las empresas del piloto tienen acceso directo al equipo y participan en definir qué sigue.
             </p>
           </div>
 
@@ -94,6 +94,11 @@ export default function Scope() {
             ))}
           </div>
         </div>
+
+        {/* Pilot note */}
+        <p className="text-center text-sm text-text-secondary mt-10 max-w-2xl mx-auto leading-relaxed">
+          Estamos en fase piloto. Las primeras empresas tienen implementación gratuita, 50% de descuento durante 12 meses y acceso directo al equipo. Los cupos son limitados.
+        </p>
       </Container>
     </section>
   );

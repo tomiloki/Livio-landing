@@ -1,7 +1,10 @@
 import Container from "@/components/layout/Container";
 import ContactForm from "@/components/forms/ContactForm";
+import { homeContent } from "@/content/home";
 
 export default function FinalCTA() {
+  const { finalCTA } = homeContent;
+
   return (
     <section id="contacto" className="py-20 bg-gradient-to-br from-primary via-primary-light to-primary relative overflow-hidden">
       {/* Decorative elements */}
@@ -9,21 +12,41 @@ export default function FinalCTA() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       
       <Container>
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto relative z-10">
           <div className="text-white">
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold mb-6">
-              Conversemos
+              Solicitar cupo en el piloto
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Conversemos sobre<br />tu operación
+              {finalCTA.title}
             </h2>
             <p className="text-lg text-white/90 mb-8 leading-relaxed">
-              Agenda una demo y ve cómo LIVIO puede ordenar tu operación logística diaria.
+              {finalCTA.subtitle}
             </p>
+
+            {/* Pilot benefits */}
+            <div className="mb-8">
+              <p className="text-sm text-white/60 font-medium mb-3 uppercase tracking-wider">
+                Las empresas que entren al piloto reciben:
+              </p>
+              <ul className="space-y-2.5">
+                {finalCTA.benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-center gap-2.5 text-white/90">
+                    <svg className="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
             
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
+              <p className="text-sm text-white/50">
+                ¿Tienes preguntas?
+              </p>
               <a 
-                href="https://wa.me/56900000000" 
+                href={finalCTA.cta.secondary.href}
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg bg-white/[0.07] border border-white/15 text-white text-base font-medium transition-all hover:bg-white/[0.12] hover:border-white/25 w-fit"
               >
                 <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -32,14 +55,6 @@ export default function FinalCTA() {
                 </svg>
                 Escribir por WhatsApp
               </a>
-
-              <p className="text-sm text-white/40 flex items-center gap-2">
-                <svg className="w-4 h-4 text-accent opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                Respondemos en menos de 24 horas
-              </p>
             </div>
           </div>
 

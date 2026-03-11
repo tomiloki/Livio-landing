@@ -11,12 +11,15 @@ export default function Differentiation() {
           {/* Main statement */}
           <p className="text-[clamp(28px,4.5vw,56px)] font-bold leading-[1.15] tracking-[-1.5px] text-white mb-0">
             No vendemos rutas.<br />
-            Vendemos <span className="text-accent">operación bajo control.</span>
+            Ordenamos tu <span className="text-accent">operación completa.</span>
           </p>
           
           {/* Support text */}
-          <p className="mt-7 text-base text-white/45 tracking-wide leading-relaxed">
-            LIVIO no es un ruteador. Es el sistema que ordena tu día logístico de principio a fin.
+          <p className="mt-7 text-base text-white/45 tracking-wide leading-relaxed max-w-2xl mx-auto">
+            LIVIO no es un optimizador de rutas. Es el sistema que conecta todo lo que hoy está disperso: los pedidos que llegan por WhatsApp, los choferes que operan con llamadas, la evidencia que queda en teléfonos y el cierre de caja que se hace de memoria.
+          </p>
+          <p className="mt-4 text-base text-white/55 tracking-wide leading-relaxed max-w-2xl mx-auto font-medium">
+            Desde que llega el primer pedido hasta que cierras el día con evidencia. Eso es lo que resuelve LIVIO.
           </p>
         </div>
       </Container>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIVIO — Bisagra variantes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #16353F;
+    --accent: #2F8F83;
+    --bg: #F7F8F6;
+    --text-sec: #5F6B70;
+    --border: #D7DEDC;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(247,248,246,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .wordmark { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; color: var(--primary); }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a { font-size: 14px; color: var(--text-sec); text-decoration: none; }
+  .btn-nav { background: var(--accent); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: none; border-radius: 8px; padding: 10px 20px; cursor: pointer; }
+
+  /* ── BASE ── */
+  .bisagra {
+    padding: 88px 48px 96px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .bisagra-inner {
+    max-width: 720px; width: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center; gap: 24px;
+  }
+  .label {
+    font-size: 10px; font-weight: 600; letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  .statement {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(22px, 3vw, 38px);
+    font-weight: 700; line-height: 1.18;
+    letter-spacing: -0.8px;
+  }
+  .sub {
+    font-size: clamp(15px, 1.6vw, 17px);
+    line-height: 1.75; max-width: 520px;
+  }
+  /* Divisor entre variantes */
+  .divider {
+    background: #e2e6e4; padding: 14px 48px;
+    text-align: center; font-size: 11px;
+    font-family: sans-serif; color: #aaa;
+    letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  /* Flecha abajo */
+  .arrow-down {
+    opacity: 0.28;
+    animation: bob 2s ease-in-out infinite;
+  }
+  .arrow-down svg { width: 16px; height: 16px; }
+  @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+
+  /* ── VARIANTE 1 — la realidad de la pyme ── */
+  .v1 { background: var(--primary); }
+  .v1 .label { color: rgba(255,255,255,0.28); }
+  .v1 .statement { color: rgba(255,255,255,0.92); }
+  .v1 .statement em { font-style: normal; color: rgba(255,255,255,0.32); font-weight: 400; }
+  .v1 .sub { color: rgba(255,255,255,0.42); }
+  .v1 .sub strong { color: var(--accent); font-weight: 500; }
+  .v1 .arrow-down svg { color: rgba(255,255,255,0.5); }
+
+  /* ── VARIANTE 2 — el costo invisible ── */
+  .v2 { background: #0e2028; }
+  .v2 .label { color: rgba(255,255,255,0.28); }
+  .v2 .statement { color: rgba(255,255,255,0.9); }
+  .v2 .statement em { font-style: normal; color: var(--accent); }
+  .v2 .sub { color: rgba(255,255,255,0.4); }
+  .v2 .sub strong { color: rgba(255,255,255,0.75); font-weight: 500; }
+  .v2 .arrow-down svg { color: rgba(255,255,255,0.5); }
+
+  /* ── VARIANTE 3 — el punto de quiebre ── */
+  .v3 { background: var(--primary); }
+  .v3 .label { color: rgba(255,255,255,0.28); }
+  .v3 .statement { color: rgba(255,255,255,0.92); }
+  .v3 .statement em { font-style: normal; color: rgba(255,255,255,0.3); font-weight: 400; }
+  .v3 .sub { color: rgba(255,255,255,0.42); }
+  .v3 .sub strong { color: var(--accent); font-weight: 500; }
+  .v3 .arrow-down svg { color: rgba(255,255,255,0.5); }
+
+  /* ── VARIANTE 4 — la pregunta ── */
+  .v4 { background: #0e2028; }
+  .v4 .label { color: rgba(255,255,255,0.28); }
+  .v4 .statement { color: rgba(255,255,255,0.9); }
+  .v4 .statement em { font-style: normal; color: var(--accent); }
+  .v4 .sub { color: rgba(255,255,255,0.4); }
+  .v4 .sub strong { color: rgba(255,255,255,0.75); font-weight: 500; }
+  .v4 .arrow-down svg { color: rgba(255,255,255,0.5); }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="wordmark">LIVIO</span>
+  <div class="nav-links">
+    <a href="#">Cómo funciona</a><a href="#">Soluciones</a>
+    <a href="#">Nosotros</a><a href="#">Contacto</a>
+  </div>
+  <button class="btn-nav">Agendar demo</button>
+</nav>
+
+
+<!-- ══ VARIANTE 1 — "la realidad de la pyme" ══
+     Nombra las herramientas reales que usa el cliente.
+     Sin juzgar, sin exagerar. Solo el reconocimiento. -->
+<section class="bisagra v1">
+  <div class="bisagra-inner">
+    <span class="label">Variante 1</span>
+    <h2 class="statement">
+      La mayoría de las pymes logísticas coordinan<br>
+      su operación por WhatsApp, Excel <em>y memoria.</em>
+    </h2>
+    <p class="sub">
+      Funciona hasta que deja de funcionar.<br>
+      <strong>LIVIO existe para el día en que decidiste que ya era suficiente.</strong>
+    </p>
+    <div class="arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="divider">— Variante 2 —</div>
+
+<!-- ══ VARIANTE 2 — "el costo invisible" ══
+     No habla del caos, habla de lo que cuesta
+     no tener control. Más racional, menos emocional. -->
+<section class="bisagra v2">
+  <div class="bisagra-inner">
+    <span class="label">Variante 2</span>
+    <h2 class="statement">
+      Cada entrega sin registro es<br>
+      un problema que <em>espera su momento.</em>
+    </h2>
+    <p class="sub">
+      Un reclamo sin prueba. Una ruta que salió tarde. Un conductor que no sabía el plan.<br>
+      <strong>No es mala suerte — es operar sin sistema.</strong>
+    </p>
+    <div class="arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="divider">— Variante 3 —</div>
+
+<!-- ══ VARIANTE 3 — "el punto de quiebre" ══
+     Habla del momento en que la pyme decide
+     que necesita algo mejor. Más aspiracional. -->
+<section class="bisagra v3">
+  <div class="bisagra-inner">
+    <span class="label">Variante 3</span>
+    <h2 class="statement">
+      Llega un punto en que crecer<br>
+      <em>y seguir coordinando por WhatsApp</em><br>
+      se vuelven incompatibles.
+    </h2>
+    <p class="sub">
+      <strong>LIVIO es para las operaciones que están listas para dar ese paso.</strong>
+    </p>
+    <div class="arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="divider">— Variante 4 —</div>
+
+<!-- ══ VARIANTE 4 — "la pregunta directa" ══
+     Interpela al visitante directamente.
+     Más agresiva, más personal. -->
+<section class="bisagra v4">
+  <div class="bisagra-inner">
+    <span class="label">Variante 4</span>
+    <h2 class="statement">
+      ¿Cuánto tiempo perdiste hoy<br>
+      coordinando lo que ya <em>debería estar coordinado?</em>
+    </h2>
+    <p class="sub">
+      Rutas, conductores, evidencias de entrega — todo lo que hoy vive en mensajes y planillas.<br>
+      <strong>LIVIO lo centraliza en un solo lugar.</strong>
+    </p>
+    <div class="arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>

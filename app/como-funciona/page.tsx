@@ -66,8 +66,8 @@ export default function ComoFuncionaPage() {
             <p className="text-lg text-text-secondary mb-8">
               Agenda una demo y ve cómo LIVIO puede transformar tu operación logística diaria.
             </p>
-            <Button href="/contacto" variant="primary">
-              Agendar demo
+            <Button href="/#contacto" variant="primary">
+              Solicitar piloto
             </Button>
           </div>
         </Container>

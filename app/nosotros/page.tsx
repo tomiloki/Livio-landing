@@ -6,17 +6,17 @@ import { homeContent } from "@/content/home";
 
 export const metadata: Metadata = {
   title: "Nosotros - LIVIO",
-  description: "Construimos LIVIO porque conocemos el problema. Operación en orden. Crecimiento con control.",
+  description: "Construimos LIVIO porque vimos el problema de cerca. Un equipo pequeño con foco en la operación logística diaria de pymes.",
   openGraph: {
     title: "Nosotros - LIVIO",
-    description: "Construimos LIVIO porque conocemos el problema. Operación en orden. Crecimiento con control.",
+    description: "Construimos LIVIO porque vimos el problema de cerca. Un equipo pequeño con foco en la operación logística diaria de pymes.",
     type: "website",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nosotros - LIVIO",
-    description: "Construimos LIVIO porque conocemos el problema. Operación en orden. Crecimiento con control.",
+    description: "Construimos LIVIO porque vimos el problema de cerca. Un equipo pequeño con foco en la operación logística diaria de pymes.",
   },
 };
 
@@ -41,11 +41,8 @@ export default function NosotrosPage() {
             <div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">Qué creemos</h2>
               <p className="text-text-secondary mb-6">
-                {about.content}
-              </p>
-              <p className="text-text-secondary mb-6">
-                Las pymes logísticas no necesitan software enterprise imposible de implementar. 
-                Necesitan herramientas simples que les permitan operar con método, delegar con confianza 
+                Las pymes logísticas no necesitan software enterprise imposible de implementar.
+                Necesitan herramientas simples que les permitan operar con método, delegar con confianza
                 y cerrar cada día con evidencia clara.
               </p>
               <p className="text-text-secondary">
@@ -64,13 +61,19 @@ export default function NosotrosPage() {
         <Container>
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-text-primary mb-8 text-center">
-              Nuestros principios
+              El equipo
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              {about.principles.map((principle) => (
-                <div key={principle} className="flex items-start gap-3">
-                  <span className="text-accent mt-1 text-xl">✓</span>
-                  <span className="text-lg text-text-primary">{principle}</span>
+              {about.team.map((member) => (
+                <div key={member.name} className="flex items-start gap-3 bg-white rounded-xl p-5 border border-border">
+                  <span className="w-10 h-10 rounded-full bg-primary/80 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    {member.initials}
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-text-primary">{member.name}</h3>
+                    <p className="text-sm text-accent mb-1">{member.role}</p>
+                    <p className="text-sm text-text-secondary">{member.bio}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -78,17 +81,17 @@ export default function NosotrosPage() {
         </Container>
       </section>
 
-      <section className="py-20">
+      <section className="py-20 bg-background">
         <Container>
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold text-text-primary mb-4">
-              Conversemos sobre tu operación
+              Sé parte del piloto
             </h2>
             <p className="text-lg text-text-secondary mb-8">
               Queremos entender tu realidad operativa y ver cómo LIVIO puede ayudarte.
             </p>
-            <Button href="/contacto" variant="primary">
-              Agendar demo
+            <Button href="/#contacto" variant="primary">
+              Quiero ser empresa piloto
             </Button>
           </div>
         </Container>

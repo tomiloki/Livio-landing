@@ -1,9 +1,26 @@
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { homeContent } from "@/content/home";
 
 export default function MVPScope() {
-  const { mvpScope } = homeContent;
+  const mvpScope = {
+    title: "Lo esencial para ordenar la operación, sin humo",
+    subtitle: "LIVIO v1 incluye lo necesario para operar con control",
+    included: [
+      "Centralización de pedidos",
+      "Asignación de entregas",
+      "Seguimiento en tiempo real",
+      "Registro de evidencia digital",
+      "Cierre diario con reporte",
+      "Acceso web y móvil",
+    ],
+    notIncluded: [
+      "Optimización automática de rutas",
+      "Integración con ERP enterprise",
+      "Facturación integrada",
+      "Gestión de inventario",
+    ],
+    footer: "Nos enfocamos en lo que realmente ordena tu operación diaria.",
+  };
 
   return (
     <section className="py-20 bg-background">

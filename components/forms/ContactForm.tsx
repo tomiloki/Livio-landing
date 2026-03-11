@@ -8,6 +8,7 @@ export default function ContactForm() {
     empresa: "",
     email: "",
     telefono: "",
+    flota: "",
     descripcion: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -30,25 +31,28 @@ export default function ContactForm() {
           empresa: "",
           email: "",
           telefono: "",
+          flota: "",
           descripcion: "",
         });
       } else {
         setStatus("error");
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   if (status === "success") {
     return (
       <div className="bg-accent-light rounded-xl p-8 text-center" role="status" aria-live="polite">
-        <h3 className="text-xl font-semibold text-accent mb-2">¡Mensaje enviado!</h3>
-        <p className="text-text-secondary">Nos pondremos en contacto contigo pronto.</p>
+        <h3 className="text-xl font-semibold text-accent mb-2">¡Solicitud enviada!</h3>
+        <p className="text-text-secondary">Respondemos en menos de 24 horas.</p>
       </div>
     );
   }
@@ -72,7 +76,6 @@ export default function ContactForm() {
             className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
-
         <div>
           <label htmlFor="empresa" className="block text-sm font-medium text-text-primary mb-1">
             Empresa <span className="text-accent">*</span>
@@ -108,7 +111,6 @@ export default function ContactForm() {
             className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
-
         <div>
           <label htmlFor="telefono" className="block text-sm font-medium text-text-primary mb-1">
             Teléfono / WhatsApp
@@ -127,8 +129,27 @@ export default function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="flota" className="block text-sm font-medium text-text-primary mb-1">
+          ¿Cuántos vehículos tiene tu flota?
+        </label>
+        <select
+          id="flota"
+          name="flota"
+          value={formData.flota}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-text-primary"
+        >
+          <option value="">Selecciona un rango</option>
+          <option value="2-5">2–5 vehículos</option>
+          <option value="6-10">6–10 vehículos</option>
+          <option value="11-15">11–15 vehículos</option>
+          <option value="+15">+15 vehículos</option>
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="descripcion" className="block text-sm font-medium text-text-primary mb-1">
-          Cuéntanos sobre tu operación
+          Cuéntanos cómo coordinan hoy su operación
         </label>
         <textarea
           id="descripcion"
@@ -152,15 +173,15 @@ export default function ContactForm() {
         disabled={status === "loading"}
         className="w-full px-4 py-3 bg-accent text-white text-base font-medium rounded-lg transition-all hover:bg-[#278A7E] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
-        {status === "loading" ? "Enviando..." : "Enviar mensaje"}
+        {status === "loading" ? "Enviando..." : "Quiero ser empresa piloto"}
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"/>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
         </svg>
       </button>
 
       <p className="text-center text-xs text-text-secondary opacity-70">
-        Tu información no se comparte con terceros.
+        Respondemos en menos de 24 horas. Tu información no se comparte con terceros.
       </p>
     </form>
   );

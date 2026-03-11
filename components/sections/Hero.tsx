@@ -32,9 +32,9 @@ export default function Hero() {
         <div className="relative z-10 max-w-[720px] mx-auto">
           {/* Eyebrow pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-7">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
             <span className="text-xs font-medium text-white/80">
-              Software operativo para pymes logísticas
+              Piloto abierto — cupos limitados
             </span>
           </div>
 
@@ -45,24 +45,25 @@ export default function Hero() {
           </h1>
 
           {/* Subtítulo */}
-          <p className="text-[clamp(15px,1.8vw,18px)] text-white/65 leading-[1.7] max-w-[540px] mx-auto mb-10">
-            Centraliza pedidos, asigna entregas, da seguimiento, registra evidencia y cierra el día con control. Sin depender de WhatsApp suelto, Excel disperso ni del héroe de siempre.
+          <p className="text-[clamp(15px,1.8vw,18px)] text-white/65 leading-[1.7] max-w-[560px] mx-auto mb-10">
+            Deja de depender de que una persona esté en todo para que la operación no se caiga. LIVIO centraliza tus pedidos, guía a tus choferes y cierra el día con evidencia — desde el primer día.
           </p>
 
           {/* CTAs */}
           <div className="flex items-center justify-center gap-3 flex-wrap mb-14">
             <Button 
-              href="#contacto" 
+              href="/#contacto" 
               variant="primary"
               className="shadow-[0_4px_24px_rgba(47,143,131,0.45)] hover:shadow-[0_6px_28px_rgba(47,143,131,0.50)] hover:-translate-y-0.5 transition-all"
             >
-              Agendar demo
+              Quiero ser empresa piloto
               <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"/>
                 <polyline points="12 5 19 12 12 19"/>
               </svg>
             </Button>
-            <button 
+            <a 
+              href="/#como-funciona"
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border-[1.5px] border-white/25 rounded-lg px-7 py-3.5 text-[15px] font-medium transition-all hover:bg-white/16 hover:border-white/40"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -70,30 +71,28 @@ export default function Hero() {
                 <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
               </svg>
               Ver cómo funciona
-            </button>
+            </a>
           </div>
 
-          {/* Trust strip */}
+          {/* Pilot offer strip */}
           <div className="flex items-center justify-center gap-6 flex-wrap">
-            <div className="flex items-center gap-1.5 text-[13px] text-white/50">
-              <svg className="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              Implementación rápida
+            <div className="flex items-center gap-1.5 text-[13px] text-white/60 font-medium">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+              Piloto abierto — cupos limitados
             </div>
             <div className="w-px h-3 bg-white/15"></div>
             <div className="flex items-center gap-1.5 text-[13px] text-white/50">
               <svg className="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
-              Sin contratos largos
+              Implementación gratuita
             </div>
             <div className="w-px h-3 bg-white/15"></div>
             <div className="flex items-center gap-1.5 text-[13px] text-white/50">
               <svg className="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
-              Hecho para pymes reales
+              50% de descuento durante 12 meses
             </div>
           </div>
         </div>
