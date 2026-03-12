@@ -8,7 +8,6 @@ export default function ContactForm() {
     empresa: "",
     email: "",
     telefono: "",
-    flota: "",
     descripcion: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -31,7 +30,6 @@ export default function ContactForm() {
           empresa: "",
           email: "",
           telefono: "",
-          flota: "",
           descripcion: "",
         });
       } else {
@@ -59,6 +57,9 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" aria-busy={status === "loading"}>
+      <p className="text-sm text-accent font-medium bg-accent/10 rounded-lg px-3 py-2 text-center">
+        Las primeras empresas entran gratis — 2 meses sin costo, sin contrato largo.
+      </p>
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="nombre" className="block text-sm font-medium text-text-primary mb-1">
@@ -126,25 +127,6 @@ export default function ContactForm() {
             className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
-      </div>
-
-      <div>
-        <label htmlFor="flota" className="block text-sm font-medium text-text-primary mb-1">
-          ¿Cuántos vehículos tiene tu flota?
-        </label>
-        <select
-          id="flota"
-          name="flota"
-          value={formData.flota}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-text-primary"
-        >
-          <option value="">Selecciona un rango</option>
-          <option value="1-5">1–5 vehículos</option>
-          <option value="6-10">6–10 vehículos</option>
-          <option value="11-15">11–15 vehículos</option>
-          <option value="+15">+15 vehículos</option>
-        </select>
       </div>
 
       <div>

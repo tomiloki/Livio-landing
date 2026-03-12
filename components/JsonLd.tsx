@@ -13,13 +13,16 @@ export function JsonLd() {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "CLP",
-          "description": "Piloto con implementación gratuita y 50% de descuento durante 12 meses"
+          "description": "Piloto gratuito por 2 meses y precio especial de lanzamiento desde el mes 3"
         },
         "featureList": [
           "Centralización de pedidos multicanal",
+          "Automatización de pedidos por WhatsApp con IA",
           "Asignación de entregas por vehículo y conductor",
+          "Sugerencia de ruta ajustable",
           "Seguimiento en tiempo real",
           "Evidencia digital de entrega (foto, firma, GPS)",
+          "Registro de método de pago contra entrega",
           "Cierre diario con reporte automático",
           "Acceso web y móvil"
         ]
@@ -57,7 +60,7 @@ export function JsonLd() {
             "name": "¿Qué incluye el piloto de LIVIO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Las empresas del piloto reciben implementación gratuita, 50% de descuento durante 12 meses, onboarding acompañado por el equipo y acceso directo para dar feedback y moldear el producto."
+              "text": "Las empresas del piloto reciben 2 meses completamente gratuitos, precio especial de lanzamiento a partir del mes 3, onboarding incluido desde el día uno y acceso directo al equipo para dar feedback y moldear el producto."
             }
           },
           {
@@ -73,7 +76,7 @@ export function JsonLd() {
             "name": "¿Cuánto cuesta LIVIO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Las empresas que entran al piloto tienen implementación gratuita y 50% de descuento durante 12 meses. Los cupos son limitados."
+              "text": "Las empresas que entran al piloto tienen 2 meses completamente gratuitos y precio especial de lanzamiento a partir del mes 3. Los cupos son limitados."
             }
           },
           {

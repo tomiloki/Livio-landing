@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "LIVIO — La operación logística de tu pyme, en orden",
     template: "%s | LIVIO",
   },
-  description: "Software de gestión logística para pymes chilenas con flota propia. Centraliza pedidos, asigna entregas, registra evidencia y cierra el día con control. Piloto abierto — implementación gratuita.",
+  description: "Software de gestión logística para pymes chilenas con flota propia. Centraliza pedidos, asigna entregas, registra evidencia y cierra el día con control. Piloto abierto — 2 meses gratis.",
   keywords: [
     "software logístico pymes",
     "gestión de entregas Chile",

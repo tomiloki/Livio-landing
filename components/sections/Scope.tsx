@@ -5,11 +5,10 @@ export default function Scope() {
     {
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M9 11l3 3L22 4"/>
-          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
         </svg>
       ),
-      label: "Centralización de pedidos"
+      label: "Pedidos por WhatsApp con IA"
     },
     {
       icon: (
@@ -84,7 +83,7 @@ export default function Scope() {
             {features.map((feature) => (
               <div
                 key={feature.label}
-                className="flex items-center gap-2.5 px-4 py-3 rounded-full text-sm font-medium text-primary bg-accent-light border-[1.5px] border-transparent hover:border-accent/30 hover:shadow-sm transition-all duration-200"
+                className="flex items-center gap-2.5 px-4 py-3 rounded-full text-sm font-medium text-primary bg-accent-light border-[1.5px] border-transparent hover:bg-accent/15 hover:translate-x-1 transition-all duration-200"
               >
                 <span className="w-3.5 h-3.5 text-accent flex-shrink-0">
                   {feature.icon}
@@ -97,7 +96,7 @@ export default function Scope() {
 
         {/* Pilot note */}
         <p className="text-center text-sm text-text-secondary mt-10 max-w-2xl mx-auto leading-relaxed">
-          Estamos en fase piloto. El piloto arranca en abril. Las empresas que reserven su cupo ahora aseguran la implementación gratuita y el descuento desde el día uno.
+          Estamos en fase piloto. El piloto arranca en abril. Las primeras empresas entran con 2 meses gratuitos y precio especial de lanzamiento desde el mes 3.
         </p>
       </Container>
     </section>

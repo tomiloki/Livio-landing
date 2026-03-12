@@ -20,10 +20,10 @@ export default function HowItWorksTabs() {
       title: "Todos los pedidos en un solo lugar",
       description: "Sin importar de dónde vienen — WhatsApp, llamada, formulario — todos los pedidos del día quedan centralizados desde el primer momento. Nada se pierde. Nada queda en la memoria de nadie.",
       bullets: [
-        "Pedidos ingresados desde cualquier canal",
+        "Pedidos de WhatsApp interpretados automáticamente por IA",
+        "Ingreso manual en segundos desde el panel",
         "Estado visible desde el primer momento",
-        "Sin duplicados ni pedidos perdidos",
-        "Historial completo desde el ingreso"
+        "Sin duplicados ni pedidos perdidos"
       ]
     },
     {
@@ -41,8 +41,8 @@ export default function HowItWorksTabs() {
       title: "Asigna con claridad, no con llamadas",
       description: "Ves todo lo que hay que entregar en el día y lo asignas a cada chofer en segundos. Sin Excel, sin coordinación por teléfono, sin confusiones de último minuto.",
       bullets: [
-        "Asignación por vehículo y conductor",
-        "Organización por zona o sector",
+        "Sugerencia de ruta por vehículo y zona",
+        "Ruta ajustable al criterio del operador",
         "Capacidad de carga visible por vehículo",
         "Cambios de último minuto sin desorden"
       ]
@@ -81,6 +81,7 @@ export default function HowItWorksTabs() {
         "Foto de entrega desde la app del conductor",
         "Firma digital del receptor",
         "Coordenadas GPS registradas automáticamente",
+        "Registro de método de pago contra entrega",
         "Todo vinculado al pedido y al conductor"
       ]
     },

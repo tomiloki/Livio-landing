@@ -9,13 +9,13 @@ export default function Problem() {
 
         {/* Statement */}
         <h2 className="font-sans text-[clamp(22px,3vw,38px)] font-bold leading-[1.18] tracking-[-0.8px] text-white/[0.92]">
-          El negocio funciona. Pero depende demasiado<br />
-          de que tú <em className="not-italic text-white/[0.32] font-normal">estés en todo.</em>
+          Tu operación funciona porque tú estás en todo.<br />
+          El problema es que <em className="not-italic text-white/[0.32] font-normal">eso no escala.</em>
         </h2>
 
         {/* Subtext */}
         <p className="text-[clamp(15px,1.6vw,17px)] leading-[1.75] text-white/[0.42] max-w-[520px]">
-          Los pedidos llegan por WhatsApp. La asignación se hace de palabra. El cierre del día toma más tiempo del que debería. Y si falta alguien, todo se siente más frágil de lo que quisieras.
+          Hay un punto en que seguir creciendo así cuesta más de lo que rinde — en tiempo, en errores y en clientes perdidos. Livio convierte lo que está en tu cabeza en un sistema que funciona aunque no estés mirando.
         </p>
 
         {/* CTA Button */}

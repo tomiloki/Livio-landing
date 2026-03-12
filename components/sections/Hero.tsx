@@ -85,14 +85,7 @@ export default function Hero() {
               <svg className="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
-              Implementación gratuita
-            </div>
-            <div className="hidden sm:block w-px h-3 bg-white/15"></div>
-            <div className="flex items-center gap-1.5 text-[13px] text-white/50">
-              <svg className="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              50% de descuento durante 12 meses
+              Piloto gratuito — 2 meses sin costo
             </div>
           </div>
         </div>
