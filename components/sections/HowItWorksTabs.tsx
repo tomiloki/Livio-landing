@@ -1,10 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Container from "@/components/layout/Container";
 
 export default function HowItWorksTabs() {
   const [activeTab, setActiveTab] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTab = (index: number) => {
+    setActiveTab(index);
+    const slider = sliderRef.current;
+    if (slider) {
+      const slide = slider.children[index] as HTMLElement;
+      slider.scrollTo({ left: slide.offsetLeft, behavior: 'smooth' });
+    }
+  };
+
+  const handleScroll = () => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    const slideWidth = slider.offsetWidth;
+    const index = Math.round(slider.scrollLeft / slideWidth);
+    if (index !== activeTab) setActiveTab(index);
+  };
+
+  const nextTab = () => scrollToTab((activeTab + 1) % tabs.length);
+  const prevTab = () => scrollToTab((activeTab - 1 + tabs.length) % tabs.length);
 
   const tabs = [
     {
@@ -20,7 +41,7 @@ export default function HowItWorksTabs() {
       title: "Todos los pedidos en un solo lugar",
       description: "Sin importar de dónde vienen — WhatsApp, llamada, formulario — todos los pedidos del día quedan centralizados desde el primer momento. Nada se pierde. Nada queda en la memoria de nadie.",
       bullets: [
-        "Pedidos de WhatsApp interpretados automáticamente por IA",
+        "Pedidos de WhatsApp ingresan automáticamente por IA",
         "Ingreso manual en segundos desde el panel",
         "Estado visible desde el primer momento",
         "Sin duplicados ni pedidos perdidos"
@@ -108,16 +129,8 @@ export default function HowItWorksTabs() {
     }
   ];
 
-  const nextTab = () => {
-    setActiveTab((prev) => (prev + 1) % tabs.length);
-  };
-
-  const prevTab = () => {
-    setActiveTab((prev) => (prev - 1 + tabs.length) % tabs.length);
-  };
-
   return (
-    <section id="como-funciona" className="section-fade-from-dark py-16 md:py-24 bg-white">
+    <section id="como-funciona" className="py-16 md:py-24 bg-white">
       <Container>
         {/* Header */}
         <div className="text-center mb-14">
@@ -133,81 +146,68 @@ export default function HowItWorksTabs() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="bg-white border-2 border-border rounded-[16px] p-1.5 md:p-2 flex gap-1 md:gap-1.5 mb-8 md:mb-12 overflow-x-auto shadow-sm scrollbar-none">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex-shrink-0 md:flex-1 min-w-0 flex items-center justify-center gap-1.5 md:gap-2.5 px-3 md:px-4 py-3 md:py-3.5 rounded-[10px] md:rounded-[12px] text-[13px] md:text-[14px] font-semibold transition-all duration-200 whitespace-nowrap ${
-                activeTab === tab.id
-                  ? 'bg-primary text-white shadow-lg'
-                  : 'bg-transparent text-text-secondary hover:bg-background hover:text-text-primary'
-              }`}
-            >
-              <span className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] flex-shrink-0">{tab.icon}</span>
-              <span className={`text-[10px] md:text-[11px] font-bold hidden sm:inline ${activeTab === tab.id ? 'opacity-70' : 'opacity-50'}`}>
-                {tab.number}
-              </span>
-              <span className="hidden sm:inline">{tab.label}</span>
-              <span className="sm:hidden">{tab.number}</span>
-            </button>
-          ))}
+        <div className="mb-8 md:mb-12">
+          <div className="bg-white border-2 border-border rounded-[16px] p-1.5 md:p-2 flex gap-1 md:gap-1.5 shadow-sm w-full">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => scrollToTab(tab.id)}
+                className={`flex-1 flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2.5 px-2 md:px-4 py-3 md:py-3.5 rounded-[10px] md:rounded-[12px] text-[13px] md:text-[14px] font-semibold transition-all duration-200 ${
+                  activeTab === tab.id
+                    ? 'bg-primary text-white shadow-lg'
+                    : 'bg-transparent text-text-secondary hover:bg-background hover:text-text-primary'
+                }`}
+              >
+                <span className="w-[18px] h-[18px] md:w-[16px] md:h-[16px] flex-shrink-0">{tab.icon}</span>
+                <span className="hidden md:inline text-[11px] font-bold opacity-60">{tab.number}</span>
+                <span className="hidden md:inline">{tab.label}</span>
+                <span className="md:hidden text-[10px] font-semibold leading-tight text-center">{tab.number}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Tab Panels with Navigation */}
-        <div className="relative px-0 md:px-16 min-h-[300px] md:min-h-[400px]">
-          {/* Previous Button */}
+        {/* Desktop: prev/next buttons + panels */}
+        <div className="hidden md:block relative px-16 min-h-[400px]">
           <button
             onClick={prevTab}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-border shadow-lg items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all hover:scale-110 z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-border shadow-lg flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all hover:scale-110 z-10"
             aria-label="Paso anterior"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6"/>
             </svg>
           </button>
-
-          {/* Next Button */}
           <button
             onClick={nextTab}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-border shadow-lg items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all hover:scale-110 z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-border shadow-lg flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all hover:scale-110 z-10"
             aria-label="Siguiente paso"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6"/>
             </svg>
           </button>
-
           {tabs.map((tab) => (
             <div
               key={tab.id}
-              className={`grid md:grid-cols-2 gap-8 md:gap-16 items-start transition-all duration-300 ${
+              className={`grid grid-cols-2 gap-16 items-start transition-all duration-300 ${
                 activeTab === tab.id ? 'block animate-fadePanel' : 'hidden'
               }`}
             >
-              {/* Left: Content */}
               <div>
-                <div className="text-[56px] md:text-[76px] font-extrabold text-accent-light leading-none mb-2 md:mb-3.5 tracking-[-3px]">
-                  {tab.number}
-                </div>
-                <h3 className="text-[24px] md:text-[31px] font-bold text-text-primary mb-3 md:mb-4.5 leading-tight tracking-tight">
-                  {tab.title}
-                </h3>
-                <p className="text-[15px] md:text-[16.5px] text-text-secondary mb-5 md:mb-7 leading-relaxed">
-                  {tab.description}
-                </p>
-                <ul className="space-y-2 md:space-y-2.5">
+                <div className="text-[76px] font-extrabold text-accent-light leading-none mb-3.5 tracking-[-3px]">{tab.number}</div>
+                <h3 className="text-[31px] font-bold text-text-primary mb-4.5 leading-tight tracking-tight">{tab.title}</h3>
+                <p className="text-[16.5px] text-text-secondary mb-7 leading-relaxed">{tab.description}</p>
+                <ul className="space-y-2.5">
                   {tab.bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-[13px] md:text-[14.5px] text-text-secondary">
+                    <li key={idx} className="flex items-start gap-2.5 text-[14.5px] text-text-secondary">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0"></span>
                       {bullet}
                     </li>
                   ))}
                 </ul>
               </div>
-
-              {/* Right: Mockup — hidden on mobile */}
-              <div className="hidden md:block">
+              <div>
                 {tab.id === 0 && <MockupRecibePedidos />}
                 {tab.id === 1 && <MockupPlanifica />}
                 {tab.id === 2 && <MockupEjecuta />}
@@ -218,12 +218,41 @@ export default function HowItWorksTabs() {
           ))}
         </div>
 
+        {/* Mobile: swipeable slider */}
+        <div className="md:hidden overflow-hidden">
+          <div
+            ref={sliderRef}
+            onScroll={handleScroll}
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
+            {tabs.map((tab) => (
+              <div
+                key={tab.id}
+                className="flex-shrink-0 w-full snap-start px-1"
+              >
+                <div className="text-[56px] font-extrabold text-accent-light leading-none mb-2 tracking-[-3px]">{tab.number}</div>
+                <h3 className="text-[24px] font-bold text-text-primary mb-3 leading-tight tracking-tight">{tab.title}</h3>
+                <p className="text-[15px] text-text-secondary mb-5 leading-relaxed">{tab.description}</p>
+                <ul className="space-y-2">
+                  {tab.bullets.map((bullet, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-[13px] text-text-secondary">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0"></span>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Dot Indicators */}
-        <div className="flex items-center justify-center gap-2.5 mt-12 h-12">
+        <div className="flex items-center justify-center gap-2.5 mt-10 h-10">
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => scrollToTab(tab.id)}
               className={`transition-all duration-200 rounded-full ${
                 activeTab === tab.id
                   ? 'w-10 h-3 bg-accent'
@@ -312,8 +341,8 @@ function MockupPlanifica() {
         </thead>
         <tbody>
           {conductores.map((conductor, idx) => (
-            <tr key={idx}>
-              <td className="text-xs py-2.5 px-2.5 border-t border-border">
+            <tr key={idx} className="group hover:bg-background/60 transition-colors cursor-default">
+              <td className="text-xs py-2.5 px-2.5 border-t border-border group-hover:border-accent/30 transition-colors">
                 <div className="flex items-center gap-1.5">
                   <div className="w-[22px] h-[22px] rounded-full bg-accent-light flex items-center justify-center text-[10px] font-semibold text-accent">
                     {conductor.avatar}
@@ -321,11 +350,11 @@ function MockupPlanifica() {
                   {conductor.nombre}
                 </div>
               </td>
-              <td className="text-[11px] text-text-secondary py-2.5 px-2.5 border-t border-border">{conductor.vehiculo}</td>
-              <td className="py-2.5 px-2.5 border-t border-border">
+              <td className="text-[11px] text-text-secondary py-2.5 px-2.5 border-t border-border group-hover:border-accent/30 transition-colors">{conductor.vehiculo}</td>
+              <td className="py-2.5 px-2.5 border-t border-border group-hover:border-accent/30 transition-colors">
                 <span className="inline-block px-2 py-0.5 rounded bg-background-alt text-[11px] text-text-secondary">{conductor.zona}</span>
               </td>
-              <td className="text-[13px] font-semibold text-accent py-2.5 px-2.5 border-t border-border">{conductor.paradas}</td>
+              <td className="text-[13px] font-semibold text-accent py-2.5 px-2.5 border-t border-border group-hover:border-accent/30 transition-colors">{conductor.paradas}</td>
             </tr>
           ))}
         </tbody>
@@ -365,7 +394,7 @@ function MockupEjecuta() {
       </div>
       <div className="space-y-1.5">
         {vehiculos.map((veh, idx) => (
-          <div key={idx} className="flex items-center gap-2.5 p-2 rounded-lg bg-background border border-border">
+          <div key={idx} className="flex items-center gap-2.5 p-2 rounded-lg bg-background border border-border hover:border-accent transition-all">
             <div className="w-7 h-7 rounded-full bg-accent-light flex items-center justify-center text-[11px] font-semibold text-accent">
               {veh.conductor}
             </div>
@@ -388,7 +417,7 @@ function MockupEvidencia() {
         <span className="text-xs text-text-secondary">Comercial Norte · Entregado a las 10:47 am</span>
       </div>
       <div className="grid grid-cols-2 gap-2.5 mb-3">
-        <div className="p-3.5 rounded-[10px] bg-background border border-border">
+        <div className="p-3.5 rounded-[10px] bg-background border border-border hover:border-accent transition-all">
           <div className="text-[10px] font-medium text-text-secondary uppercase tracking-wide mb-2">📷 Foto entrega</div>
           <div className="h-14 rounded-lg bg-accent-light flex items-center justify-center text-accent text-xl">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -397,7 +426,7 @@ function MockupEvidencia() {
             </svg>
           </div>
         </div>
-        <div className="p-3.5 rounded-[10px] bg-background border border-border">
+        <div className="p-3.5 rounded-[10px] bg-background border border-border hover:border-accent transition-all">
           <div className="text-[10px] font-medium text-text-secondary uppercase tracking-wide mb-2">✍️ Firma digital</div>
           <div className="h-14 rounded-lg bg-[#F0F9FF] border-[1.5px] border-dashed border-accent flex items-center justify-center">
             <svg className="opacity-40" width="80" height="30" viewBox="0 0 80 30">
@@ -406,7 +435,7 @@ function MockupEvidencia() {
           </div>
         </div>
       </div>
-      <div className="p-2.5 bg-background rounded-lg border border-border mb-2.5">
+      <div className="p-2.5 bg-background rounded-lg border border-border hover:border-accent transition-all mb-2.5">
         <div className="text-[10px] text-text-secondary uppercase tracking-wide mb-1">📍 Ubicación GPS</div>
         <div className="text-xs text-text-primary font-medium">-33.4489, -70.6693 · Precisión ±8m</div>
       </div>
@@ -425,15 +454,15 @@ function MockupCierre() {
   return (
     <MockupShell title="Cierre del día — Lunes 09/03">
       <div className="grid grid-cols-3 gap-2 mb-4">
-        <div className="p-3.5 rounded-[10px] text-center bg-background border border-border">
+        <div className="p-3.5 rounded-[10px] text-center bg-background border border-border hover:border-accent transition-all">
           <span className="block text-[22px] font-bold text-[#16A34A] leading-none">21</span>
           <span className="block text-[10px] text-text-secondary mt-1">Entregados</span>
         </div>
-        <div className="p-3.5 rounded-[10px] text-center bg-background border border-border">
+        <div className="p-3.5 rounded-[10px] text-center bg-background border border-border hover:border-accent transition-all">
           <span className="block text-[22px] font-bold text-[#D97706] leading-none">2</span>
           <span className="block text-[10px] text-text-secondary mt-1">Pendientes</span>
         </div>
-        <div className="p-3.5 rounded-[10px] text-center bg-background border border-border">
+        <div className="p-3.5 rounded-[10px] text-center bg-background border border-border hover:border-accent transition-all">
           <span className="block text-[22px] font-bold text-text-primary leading-none">1</span>
           <span className="block text-[10px] text-text-secondary mt-1">Incidencia</span>
         </div>

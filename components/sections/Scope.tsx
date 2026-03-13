@@ -83,7 +83,7 @@ export default function Scope() {
             {features.map((feature) => (
               <div
                 key={feature.label}
-                className="flex items-center gap-2.5 px-4 py-3 rounded-full text-sm font-medium text-primary bg-accent-light border-[1.5px] border-transparent hover:bg-accent/15 hover:translate-x-1 transition-all duration-200"
+                className="flex items-center gap-2.5 px-4 py-3 rounded-full text-sm font-medium text-primary bg-accent-light border-[1.5px] border-transparent hover:bg-accent/25 hover:border-accent/20 hover:translate-x-1 transition-all duration-200"
               >
                 <span className="w-3.5 h-3.5 text-accent flex-shrink-0">
                   {feature.icon}

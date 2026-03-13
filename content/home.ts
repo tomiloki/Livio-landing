@@ -137,11 +137,11 @@ export const homeContent = {
     team: [
       {
         name: "Tomás Fuentealba",
-        role: "CEO & Co-Founder",
+        role: "Co-Founder & CEO",
         bio: "Vio el problema desde adentro. Trabajó en terreno en distribución de agua y paquetería, coordinó con proveedores y conversó con choferes de decenas de negocios. Sabe exactamente dónde se rompe una operación logística — y construyó Livio para arreglarlo.",
         initials: "TF",
         isFounder: true,
-        badge: "CEO & Co-Founder",
+        badge: "Co-Founder & CEO",
         photo: "/images/FuentealbaIA.jpeg",
       },
       {

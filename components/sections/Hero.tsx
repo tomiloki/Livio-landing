@@ -34,14 +34,14 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-7">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
             <span className="text-xs font-medium text-white/80">
-              Lanzamiento en abril — reserva tu cupo
+              Software de gestión logística para pymes
             </span>
           </div>
 
           {/* Título */}
           <h1 className="text-[clamp(32px,6vw,68px)] font-extrabold leading-[1.07] tracking-[-2px] text-white mb-6">
-            La operación logística<span className="md:block inline"> </span>
-            de tu pyme, <span className="text-accent">en orden.</span>
+            Hiciste crecer tu negocio solo,<span className="md:block inline"> </span>
+            ahora que <span className="text-accent">no se caiga sin ti.</span>
           </h1>
 
           {/* Subtítulo */}

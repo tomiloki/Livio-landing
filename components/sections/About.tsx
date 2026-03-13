@@ -8,7 +8,7 @@ export default function About() {
   const { about } = homeContent;
 
   return (
-    <section id="nosotros" className="section-fade-from-dark py-16 md:py-24 bg-white">
+    <section id="nosotros" className="py-16 md:py-24 bg-white">
       <Container>
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">

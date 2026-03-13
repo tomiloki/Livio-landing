@@ -6,7 +6,7 @@ export default function FinalCTA() {
   const { finalCTA } = homeContent;
 
   return (
-    <section id="contacto" className="section-end-light py-14 md:py-20 bg-gradient-to-br from-primary via-primary-light to-primary relative">
+    <section id="contacto" className="py-14 md:py-20 bg-gradient-to-br from-primary via-primary-light to-primary relative">
       {/* Decorative elements wrapper */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
@@ -16,9 +16,6 @@ export default function FinalCTA() {
       <Container>
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start max-w-5xl mx-auto relative z-10">
           <div className="text-white">
-            <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold mb-6">
-              Solicitar cupo en el piloto
-            </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               {finalCTA.title}
             </h2>
