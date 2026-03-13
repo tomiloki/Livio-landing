@@ -142,7 +142,7 @@ export const homeContent = {
         initials: "TF",
         isFounder: true,
         badge: "CEO & Co-Founder",
-        photo: "/images/fuentealbaIA.jpeg",
+        photo: "/images/FuentealbaIA.jpeg",
       },
       {
         name: "Tomás Escalante",
