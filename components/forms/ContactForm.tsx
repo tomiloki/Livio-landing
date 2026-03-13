@@ -9,6 +9,7 @@ export default function ContactForm() {
     email: "",
     telefono: "",
     descripcion: "",
+    website: "", // honeypot
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -31,6 +32,7 @@ export default function ContactForm() {
           email: "",
           telefono: "",
           descripcion: "",
+          website: "",
         });
       } else {
         setStatus("error");
@@ -141,6 +143,20 @@ export default function ContactForm() {
           value={formData.descripcion}
           onChange={handleChange}
           className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent resize-none"
+        />
+      </div>
+
+      {/* Honeypot — invisible to users, catches bots */}
+      <div className="absolute opacity-0 -z-10 h-0 overflow-hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={formData.website}
+          onChange={handleChange}
         />
       </div>
 

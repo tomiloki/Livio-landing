@@ -61,7 +61,7 @@ export default function Scope() {
   ];
 
   return (
-    <section className="py-14 md:py-20 bg-white border-t border-b border-border">
+    <section className="py-14 md:py-20 bg-white border-t border-border">
       <Container>
         <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-center max-w-6xl mx-auto">
           {/* Left - Title & Description */}

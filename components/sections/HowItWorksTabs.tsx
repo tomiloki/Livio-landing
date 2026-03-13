@@ -117,7 +117,7 @@ export default function HowItWorksTabs() {
   };
 
   return (
-    <section id="como-funciona" className="py-16 md:py-24 bg-white">
+    <section id="como-funciona" className="section-fade-from-dark py-16 md:py-24 bg-white">
       <Container>
         {/* Header */}
         <div className="text-center mb-14">

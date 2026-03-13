@@ -160,7 +160,7 @@ export const homeContent = {
         initials: "EC",
         isFounder: true,
         badge: "Founder Team",
-        photo: "/images/estebanIA.jpeg",
+        photo: "/images/estebanIA.png",
       },
       {
         name: "Ignacio Saavedra",

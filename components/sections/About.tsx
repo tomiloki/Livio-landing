@@ -8,7 +8,7 @@ export default function About() {
   const { about } = homeContent;
 
   return (
-    <section id="nosotros" className="py-16 md:py-24 bg-white">
+    <section id="nosotros" className="section-fade-from-dark py-16 md:py-24 bg-white">
       <Container>
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
@@ -24,11 +24,11 @@ export default function About() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
+        <div className="flex md:grid md:grid-cols-4 gap-5 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory scrollbar-none pt-2 pb-4 md:pb-0 -mx-6 px-6 md:mx-auto md:px-0">
           {about.team.map((member) => (
             <div
               key={member.name}
-              className="group relative bg-[#F7F8F6] rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              className="group relative bg-[#F7F8F6] rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex-shrink-0 w-[75vw] sm:w-[60vw] md:w-auto snap-center will-change-transform"
             >
               {/* Photo / Avatar zone */}
               <div className="aspect-[3/4] relative overflow-hidden bg-gradient-to-b from-gray-100 to-gray-200">
@@ -37,7 +37,7 @@ export default function About() {
                     src={member.photo}
                     alt={member.name}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="object-cover"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">

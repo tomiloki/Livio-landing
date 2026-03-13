@@ -2,7 +2,7 @@ import Container from "@/components/layout/Container";
 
 export default function Differentiation() {
   return (
-    <section className="py-16 md:py-24 bg-primary text-center">
+    <section className="section-accent-line py-16 md:py-24 bg-primary text-center">
       <Container>
         <div className="max-w-4xl mx-auto">
           {/* Decorative rule */}
