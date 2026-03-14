@@ -1,6 +1,6 @@
 **01 --- LIVIO Brief rector web**
 
-*Documento rector de estrategia web. Debe ser la fuente principal para Kiro.*
+*Documento rector de estrategia web. Debe ser la fuente principal para Claude.*
 
 | **Paquete documental para construcción web en Kiro** |
 |------------------------------------------------------|

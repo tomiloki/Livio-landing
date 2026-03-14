@@ -3,11 +3,11 @@
 Fecha: 8 de marzo de 2026
 
 ## Fuentes revisadas
-- docs/kiro/01_LIVIO_Brief_rector_web.md
-- docs/kiro/02_LIVIO_Identidad_verbal_y_copy_base.md
-- docs/kiro/03_LIVIO_Direccion_visual_y_sistema_de_componentes.md
-- docs/kiro/04_LIVIO_Wireframe_por_seccion.md
-- docs/kiro/05_LIVIO_Restricciones_tecnicas_e_implementacion_web.md
+- docs/01_LIVIO_Brief_rector_web.md
+- docs/02_LIVIO_Identidad_verbal_y_copy_base.md
+- docs/03_LIVIO_Direccion_visual_y_sistema_de_componentes.md
+- docs/04_LIVIO_Wireframe_por_seccion.md
+- docs/05_LIVIO_Restricciones_tecnicas_e_implementacion_web.md
 
 ## Resumen ejecutivo
 - El sitio cumple con la estructura, stack y narrativa base solicitadas.

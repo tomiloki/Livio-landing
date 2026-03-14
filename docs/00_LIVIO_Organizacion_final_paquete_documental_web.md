@@ -2,7 +2,7 @@
 
 *Documento guía para saber qué archivo manda, para qué sirve y en qué orden usarlo.*
 
-| **Paquete documental para construcción web en Kiro** |
+| **Paquete documental para construcción web en Claude** |
 |------------------------------------------------------|
 
 # 1. Veredicto de organización {#veredicto-de-organización}
@@ -30,7 +30,7 @@ La organización final debe ser modular. El problema actual no es falta de conte
 | 04         | Wireframe por sección                         | Estructura y jerarquía por página    | Manda sobre layout                              |
 | 05         | Restricciones técnicas e implementación web   | Cómo debe construirse                | Manda sobre decisiones técnicas                 |
 
-# 3. Orden de lectura para Kiro {#orden-de-lectura-para-kiro}
+# 3. Orden de lectura para Claude {#orden-de-lectura-para-kiro}
 
 1.  01 --- Brief rector web
 
@@ -44,7 +44,7 @@ La organización final debe ser modular. El problema actual no es falta de conte
 
 # 4. Regla de conflicto {#regla-de-conflicto}
 
-Si dos documentos parecen decir cosas distintas, Kiro debe resolverlos así:
+Si dos documentos parecen decir cosas distintas, Claude debe resolverlos así:
 
 6.  Primero manda el Brief rector.
 
@@ -79,7 +79,3 @@ Si dos documentos parecen decir cosas distintas, Kiro debe resolverlos así:
 - 04 --- Wireframe por sección (revisado)
 
 - 05 --- Restricciones técnicas e implementación web (revisado)
-
-# 7. Siguiente paso recomendado {#siguiente-paso-recomendado}
-
-Una vez aprobada esta estructura, recién conviene hacer un AGENTS.md corto que no repita todo, sino que diga a Kiro qué leer primero, qué no puede inventar y qué decisiones ya están cerradas.

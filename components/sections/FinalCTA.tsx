@@ -41,7 +41,7 @@ export default function FinalCTA() {
             </div>
             
             <div className="flex flex-col gap-3">
-              <p className="text-sm text-white/50">
+              <p className="text-sm text-white/70">
                 ¿Tienes preguntas?
               </p>
               <a 

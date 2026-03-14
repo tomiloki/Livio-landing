@@ -3,18 +3,18 @@ export default function Problem() {
     <section id="problema" className="bg-primary py-24 md:py-36 px-5 md:px-12 flex items-center justify-center">
       <div className="max-w-[860px] w-full flex flex-col items-center text-center gap-10">
         {/* Eyebrow */}
-        <span className="text-[11px] font-semibold tracking-[3px] uppercase text-white/[0.28]">
+        <span className="text-[11px] font-semibold tracking-[3px] uppercase text-white/[0.60]">
           El problema real
         </span>
 
         {/* Statement */}
         <h2 className="font-sans text-[clamp(28px,4vw,52px)] font-bold leading-[1.15] tracking-[-1px] text-white/[0.92]">
           Tu operación funciona porque tú estás en todo.<br />
-          El problema es que <em className="not-italic text-white/[0.28] font-normal">eso no escala.</em>
+          El problema es que <em className="not-italic text-white/[0.55] font-normal">eso no escala.</em>
         </h2>
 
 {/* Subtext */}
-        <p className="text-[clamp(16px,1.6vw,20px)] leading-[1.8] text-white/[0.42] max-w-[700px]">
+        <p className="text-[clamp(16px,1.6vw,20px)] leading-[1.8] text-white/[0.70] max-w-[700px]">
           No somos un optimizador de rutas. Somos el sistema que toma todo lo que hoy está en la cabeza de una persona — los pedidos, los choferes, la evidencia, el cierre — y lo convierte en algo que funciona aunque esa persona no esté.
         </p>
 

@@ -15,10 +15,10 @@ export default function Differentiation() {
           </p>
           
           {/* Support text */}
-          <p className="mt-7 text-[clamp(15px,1.4vw,18px)] text-white/45 tracking-wide leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-7 text-[clamp(15px,1.4vw,18px)] text-white/70 tracking-wide leading-relaxed max-w-2xl mx-auto">
             Hoy hay una persona que sabe dónde está cada chofer, qué pedidos van atrasados y cuánto se cobró. LIVIO hace que esa información no dependa de nadie en particular — queda visible, trazable y disponible para todo el equipo.
           </p>
-          <p className="mt-4 text-[clamp(15px,1.4vw,18px)] text-white/55 tracking-wide leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="mt-4 text-[clamp(15px,1.4vw,18px)] text-white/75 tracking-wide leading-relaxed max-w-2xl mx-auto font-medium">
             Desde que llega el primer pedido hasta que cierras el día con evidencia. Eso es lo que resuelve LIVIO.
           </p>
         </div>

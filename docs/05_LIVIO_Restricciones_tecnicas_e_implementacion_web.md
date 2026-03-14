@@ -2,7 +2,7 @@
 
 *Documento rector de stack, arquitectura, restricciones y QA técnico.*
 
-|**Paquete documental para construcción web en Kiro**|
+|**Paquete documental para construcción web en Claude**|
 | :-: |
 
 # **1. Objetivo técnico**

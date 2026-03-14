@@ -3,7 +3,7 @@
 *Documento rector de arte, UI, paleta, componentes y reglas visuales.*
 
   -----------------------------------------------------------------------
-  **Paquete documental para construcción web en Kiro**
+  **Paquete documental para construcción web en Claude**
   -----------------------------------------------------------------------
 
   -----------------------------------------------------------------------

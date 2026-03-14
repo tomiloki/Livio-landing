@@ -14,8 +14,8 @@ export default function Home() {
     <>
       <Hero />
       <Problem />
-      <HowItWorksTabs />
       <BeforeAfter />
+      <HowItWorksTabs />
       <Scope />
       {/* <VideoSection /> TODO: reactivar cuando tengamos video */}
       <Differentiation />

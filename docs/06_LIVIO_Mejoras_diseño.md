@@ -1,6 +1,6 @@
 # 06 — LIVIO Mejoras de diseño visual
 
-*Documento de especificaciones de diseño para Kiro. Complementa el paquete documental existente (01–05). Aplica sobre la implementación actual para elevar el impacto visual sin romper la estrategia ni el stack.*
+*Documento de especificaciones de diseño para Claude. Complementa el paquete documental existente (01–05). Aplica sobre la implementación actual para elevar el impacto visual sin romper la estrategia ni el stack.*
 
 ---
 

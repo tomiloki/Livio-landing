@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "magicui"
+  ],
+  "enableAllProjectMcpServers": true
+}
