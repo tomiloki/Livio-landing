@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import Container from "@/components/layout/Container";
+import FadeIn from "@/components/ui/FadeIn";
 
 export default function HowItWorksTabs() {
   const [activeTab, setActiveTab] = useState(0);
@@ -133,7 +134,7 @@ export default function HowItWorksTabs() {
     <section id="como-funciona" className="py-16 md:py-24 bg-white">
       <Container>
         {/* Header */}
-        <div className="text-center mb-14">
+        <FadeIn className="text-center mb-14">
           <p className="text-accent font-semibold mb-4 tracking-[2px] uppercase text-[11px]">
             Cómo funciona
           </p>
@@ -143,7 +144,7 @@ export default function HowItWorksTabs() {
           <p className="text-[17px] text-text-secondary max-w-2xl mx-auto leading-relaxed">
             Cinco pasos que convierten el caos de cada día en una rutina clara, visible y cerrable.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Tab Navigation */}
         <div className="mb-8 md:mb-12">

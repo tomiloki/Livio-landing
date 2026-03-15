@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Container from "@/components/layout/Container";
+import FadeIn from "@/components/ui/FadeIn";
 import { homeContent } from "@/content/home";
 
 export default function About() {
@@ -11,7 +12,7 @@ export default function About() {
     <section id="nosotros" className="py-16 md:py-24 bg-white">
       <Container>
         {/* Header */}
-        <div className="text-center mb-10 md:mb-16">
+        <FadeIn className="text-center mb-10 md:mb-16">
           <p className="text-accent font-medium mb-3 tracking-[2.5px] uppercase text-[11px]">
             El equipo
           </p>
@@ -21,7 +22,7 @@ export default function About() {
           <p className="text-[15px] text-text-secondary leading-relaxed max-w-[520px] mx-auto">
             {about.subtitle}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Grid */}
         <div className="flex md:grid md:grid-cols-4 gap-5 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory scrollbar-none pt-2 pb-4 md:pb-0 -mx-6 px-6 md:mx-auto md:px-0">

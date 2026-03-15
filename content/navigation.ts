@@ -6,7 +6,7 @@ export const navigation = {
     { label: "Contacto", href: "#contacto" },
   ],
   cta: {
-    label: "Unirme al piloto",
+    label: "Reservar cupo",
     href: "#contacto",
   },
 };
